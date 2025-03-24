@@ -63,7 +63,7 @@
           "multiple": false,
           "locked": false,
           "mimeType": "text/html",
-          "values": ["Save 65%"]
+          "values": ["<merch-badge background-color=\"spectrum-yellow-300\" variant=\"ccd-slice\">Badge text</merch-badge>"]
       },
       {
           "name": "backgroundImage",
