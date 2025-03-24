@@ -5,6 +5,7 @@ export default class MerchBadge extends LitElement {
     color: { type: String },
     variant: { type: String },
     backgroundColor: { type: String, attribute: 'background-color' },
+    borderColor: { type: String, attribute: 'border-color' },
   };
 
   constructor() {
@@ -12,9 +13,13 @@ export default class MerchBadge extends LitElement {
     this.color = '';
     this.variant = '';
     this.backgroundColor = '';
+    this.borderColor = '';
   }
 
   connectedCallback() {
+    if (this.borderColor && this.borderColor !== 'transparent') {
+      this.style.setProperty('--merch-badge-border', `1px solid var(--${this.borderColor})`);
+    }
     this.style.setProperty('--merch-badge-background-color', `var(--${this.backgroundColor})`);
     this.style.setProperty('--merch-badge-color', this.color);
     this.style.setProperty('--merch-badge-padding', '8px 11px');
@@ -27,6 +32,9 @@ export default class MerchBadge extends LitElement {
     }
     if (this.variant === 'ccd-suggested' || this.variant === 'catalog') {
       this.style.setProperty('--merch-badge-border-radius', '4px');
+    }
+    if (this.variant === 'plans' || this.variant === 'special-offers') {
+        this.style.setProperty('border-right', 'none');
     }
     super.connectedCallback();
   }
@@ -46,6 +54,7 @@ export default class MerchBadge extends LitElement {
             border-radius: var(--merch-badge-border-radius);
             font-size: var(--merch-badge-font-size);
             line-height: normal;
+            border: var(--merch-badge-border);
         }
     `;
 }
