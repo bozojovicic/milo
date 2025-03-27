@@ -92,6 +92,10 @@ styles.innerHTML = `
     --consonant-merch-card-price-color: #222222;
     --consonant-merch-card-heading-xxxs-color: #131313;
     --consonant-merch-card-body-xxs-color: #292929;
+    
+    --spectrum-yellow-300: #F8D904;
+    --spectrum-gray-200: #D1D1D1;
+    --spectrum-green-800: #2D9D78;
 
     /* ccd colors */
     --ccd-gray-200-light: #E6E6E6;
@@ -257,6 +261,23 @@ merch-card [slot='heading-xl'] {
     font-size: var(--consonant-merch-card-heading-xl-font-size);
     line-height: var(--consonant-merch-card-heading-xl-line-height);
     margin: 0;
+}
+
+merch-card [slot='whats-included'] {
+    margin: var(--consonant-merch-spacing-xxxs) 0px;
+}
+
+merch-card[variant='catalog'] [slot='badge'] {
+    margin-left: 8px;
+    line-height: 16px;
+}
+
+merch-card[variant='special-offers'] [slot='badge'],
+merch-card[variant='plans'] [slot='badge'] {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    line-height: 16px;
 }
 
 merch-card [slot='callout-content'] {
