@@ -17,8 +17,10 @@ export default class MerchBadge extends LitElement {
   }
 
   connectedCallback() {
-    if (this.borderColor && this.borderColor !== 'transparent') {
+    if (this.borderColor && this.borderColor !== 'Transparent') {
       this.style.setProperty('--merch-badge-border', `1px solid var(--${this.borderColor})`);
+    } else {
+      this.style.setProperty('--merch-badge-border', `1px solid var(--${this.backgroundColor})`);
     }
     this.style.setProperty('--merch-badge-background-color', `var(--${this.backgroundColor})`);
     this.style.setProperty('--merch-badge-color', this.color);
