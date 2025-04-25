@@ -89,3 +89,14 @@ export function discoverService(getConfig, { once = false } = {}) {
 export function getService() {
   return document.getElementsByTagName(MAS_COMMERCE_SERVICE)?.[0];
 }
+
+/**
+ * Convert any html entities to text
+ * @param {string} html string to decode
+ * @returns {string} decoded html entities
+ */
+export function htmlToText(html) {
+  const div = document.createElement('div');
+  div.innerHTML = html;
+  return div.textContent || div.innerText || '';
+}

@@ -1,5 +1,5 @@
 import { UptLink } from './upt-link.js';
-import { createTag } from './utils.js';
+import { createTag, htmlToText } from './utils.js';
 
 const DEFAULT_BADGE_COLOR = '#000000';
 const DEFAULT_PLANS_BADGE_COLOR = 'spectrum-yellow-300-plans';
@@ -79,7 +79,7 @@ function processBadge(fields, merchCard, mapping) {
     }
 
     if (fields.badge) {
-        merchCard.setAttribute('badge-text', fields.badge);
+        merchCard.setAttribute('badge-text', htmlToText(fields.badge));
         merchCard.setAttribute(
             'badge-color',
             fields.badgeColor || DEFAULT_BADGE_COLOR,
