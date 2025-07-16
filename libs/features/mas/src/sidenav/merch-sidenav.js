@@ -65,6 +65,10 @@ export class MerchSideNav extends LitElement {
                 width: 100%;
                 padding-bottom: 16px;
             }
+            
+            sp-dialog-base {
+              z-index: 3;
+            }
 
             sp-dialog-base #sidenav {
                 padding-top: 16px;
@@ -161,7 +165,6 @@ export class MerchSideNav extends LitElement {
                 enableBodyScroll(this.dialog);
             });
             this.shadowRoot.querySelector('sp-theme').append(overlay);
-            console.log('###');
             this.dialog?.shadowRoot.querySelector('.modal')?.style.setProperty('z-index', '3');
         });
     }
