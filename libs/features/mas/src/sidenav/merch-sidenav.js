@@ -26,7 +26,7 @@ export class MerchSideNav extends LitElement {
         css`
             :host {
                 display: block;
-                z-index: 3;
+                z-index: 999;
             }
 
             :host h2 {
@@ -46,7 +46,7 @@ export class MerchSideNav extends LitElement {
                 display: flex;
                 justify-content: center;
                 align-items: baseline;
-                z-index: 3;
+                z-index: 999;
                 position: relative;
             }
             
@@ -67,7 +67,7 @@ export class MerchSideNav extends LitElement {
             }
             
             sp-dialog-base {
-              z-index: 3;
+              z-index: 999;
             }
 
             sp-dialog-base #sidenav {
@@ -165,7 +165,7 @@ export class MerchSideNav extends LitElement {
                 enableBodyScroll(this.dialog);
             });
             this.shadowRoot.querySelector('sp-theme').append(overlay);
-            this.dialog?.shadowRoot.querySelector('.modal')?.style.setProperty('z-index', '3');
+            this.dialog?.shadowRoot.querySelector('.modal')?.style.setProperty('z-index', '999');
         });
     }
 

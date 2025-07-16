@@ -78,10 +78,10 @@ var V=Object.defineProperty;var S=o=>{throw TypeError(o)};var H=(o,e,t)=>e in o?
         `}get asAside(){return I`<sp-theme  color="light" scale="medium"
             ><h2>${this.sidenavTitle}</h2>
             <slot></slot
-        ></sp-theme>`}get dialog(){return this.shadowRoot.querySelector("sp-dialog-base")}closeModal(t){t.preventDefault(),this.dialog?.close(),document.body.classList.remove("merch-modal")}openModal(){this.updateComplete.then(async()=>{P(this.dialog),document.body.classList.add("merch-modal");let t={trigger:v(this,m),notImmediatelyClosable:!0,type:"auto"},s=await window.__merch__spectrum_Overlay.open(this.dialog,t);s.addEventListener("close",()=>{this.modal=!1,document.body.classList.remove("merch-modal"),k(this.dialog)}),this.shadowRoot.querySelector("sp-theme").append(s),this.dialog?.shadowRoot.querySelector(".modal")?.style.setProperty("z-index","3")})}updated(){this.modal&&this.openModal()}showModal({target:t}){g(this,m,t),this.modal=!0}};m=new WeakMap,r(E,"properties",{sidenavTitle:{type:String},closeText:{type:String,attribute:"close-text"},modal:{type:Boolean,attribute:"modal",reflect:!0}}),r(E,"styles",[Q`
+        ></sp-theme>`}get dialog(){return this.shadowRoot.querySelector("sp-dialog-base")}closeModal(t){t.preventDefault(),this.dialog?.close(),document.body.classList.remove("merch-modal")}openModal(){this.updateComplete.then(async()=>{P(this.dialog),document.body.classList.add("merch-modal");let t={trigger:v(this,m),notImmediatelyClosable:!0,type:"auto"},s=await window.__merch__spectrum_Overlay.open(this.dialog,t);s.addEventListener("close",()=>{this.modal=!1,document.body.classList.remove("merch-modal"),k(this.dialog)}),this.shadowRoot.querySelector("sp-theme").append(s),this.dialog?.shadowRoot.querySelector(".modal")?.style.setProperty("z-index","999")})}updated(){this.modal&&this.openModal()}showModal({target:t}){g(this,m,t),this.modal=!0}};m=new WeakMap,r(E,"properties",{sidenavTitle:{type:String},closeText:{type:String,attribute:"close-text"},modal:{type:Boolean,attribute:"modal",reflect:!0}}),r(E,"styles",[Q`
             :host {
                 display: block;
-                z-index: 3;
+                z-index: 999;
             }
 
             :host h2 {
@@ -101,7 +101,7 @@ var V=Object.defineProperty;var S=o=>{throw TypeError(o)};var H=(o,e,t)=>e in o?
                 display: flex;
                 justify-content: center;
                 align-items: baseline;
-                z-index: 3;
+                z-index: 999;
                 position: relative;
             }
             
@@ -122,7 +122,7 @@ var V=Object.defineProperty;var S=o=>{throw TypeError(o)};var H=(o,e,t)=>e in o?
             }
             
             sp-dialog-base {
-              z-index: 3;
+              z-index: 999;
             }
 
             sp-dialog-base #sidenav {
