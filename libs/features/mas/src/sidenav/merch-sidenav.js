@@ -166,6 +166,7 @@ export class MerchSideNav extends LitElement {
             });
             this.shadowRoot.querySelector('sp-theme').append(overlay);
             this.dialog?.shadowRoot.querySelector('.modal')?.style.setProperty('z-index', '999');
+            this.dialog?.shadowRoot.querySelector('sp-underlay')?.style.setProperty('z-index', '998');
         });
     }
 
